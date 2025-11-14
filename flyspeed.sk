@@ -1,0 +1,11 @@
+command flyspeed [<number>]:
+    trigger:
+        if arg-1 is not set:
+            send "Usage: /flyspeed <number>"
+        if arg-1 is less than 0:
+            send "Invalid speed! Must be between 1 and 10."
+        if arg-1 is greater than 10:
+            send "Invalid speed! Must be between 1 and 10."
+        else:
+            set player's fly speed to (arg-1) / 10
+            send "&aFly speed set to %arg-1%" 

@@ -1,0 +1,12 @@
+command toggledamage:
+    trigger:
+        if {damageDisabled::%player%} is true:
+            set {damageDisabled::%player%} to false
+            send "&aDamage has been enabled"
+        else:
+            set {damageDisabled::%player%} to true
+            send "&cDamage has been disabled"
+
+on damage:
+    if {damageDisabled::%victim%} is true:
+        cancel event

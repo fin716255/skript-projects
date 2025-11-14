@@ -1,0 +1,6 @@
+on join:
+    if {firstjoin::%player's uuid%} is not set:
+        broadcast "&e%player% &ajust joined for the first time!"
+        set {firstjoin::%player's uuid%} to now
+    else:
+        send "&aWelcome back, %player%!" to player

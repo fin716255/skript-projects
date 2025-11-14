@@ -1,0 +1,18 @@
+command fly:
+    trigger:
+        if player has permission "fly":
+            if player's flight mode is true:
+                if player is flying:
+                    set {nofalldamage::%player%} to true
+                set player's flight mode to false
+                send message "&aFlight mode disabled."
+            else:
+                set player's flight mode to true
+                send message "&aFlight mode enabled."
+        else:
+            send message "&cYou do not have permission to use this command."
+on damage:
+    if damage cause is fall:
+        if {nofalldamage::%victim%} = true:
+            cancel event
+            delete {nofalldamage::%victim%}

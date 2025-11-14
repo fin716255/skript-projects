@@ -1,0 +1,4 @@
+command heal:
+    trigger:
+        set player's health to player's max health
+        send "&aYou have been healed."
